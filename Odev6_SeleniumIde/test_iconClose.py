@@ -28,6 +28,8 @@ class TestIconClose():
     self.driver.find_element(By.CSS_SELECTOR, "*[data-test=\"password\"]").click()
     self.driver.find_element(By.CSS_SELECTOR, "*[data-test=\"password\"]").send_keys("1")
     self.driver.find_element(By.CSS_SELECTOR, "*[data-test=\"login-button\"]").click()
-    self.driver.find_element(By.CSS_SELECTOR, ".fa-times > path").click()
-    self.driver.close()
+    icon= self.driver.find_element(By.CSS_SELECTOR, ".fa-times > path")
+    icon.click()
+    assert len(icon)==0
+    
   
